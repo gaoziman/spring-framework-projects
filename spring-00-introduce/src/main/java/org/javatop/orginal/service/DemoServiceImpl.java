@@ -1,7 +1,7 @@
 package org.javatop.orginal.service;
 
 import org.javatop.orginal.dao.DemoDao;
-import org.javatop.orginal.dao.DemoDaoImpl;
+import org.javatop.orginal.factory.BeanFactory;
 
 import java.util.List;
 
@@ -13,10 +13,17 @@ import java.util.List;
  */
 public class DemoServiceImpl implements DemoService {
 
-    private DemoDao demoDao = new DemoDaoImpl();
+    DemoDao demoDao = (DemoDao) BeanFactory.getBean("demoDao");
+
 
     @Override
     public List<String> findAll() {
         return demoDao.findAll();
+    }
+
+    public DemoServiceImpl() {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(BeanFactory.getBean("demoDao"));
+        }
     }
 }
