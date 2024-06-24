@@ -1,8 +1,5 @@
 package org.javatop.orginal.factory;
 
-import org.javatop.orginal.dao.DemoDao;
-import org.javatop.orginal.dao.DemoDaoImpl;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
